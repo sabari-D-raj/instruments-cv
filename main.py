@@ -15,7 +15,7 @@ hands=mp_hand.Hands(static_image_mode=False,
                     min_tracking_confidence=0.7)
 mp_draw=mp.solutions.drawing_utils
 last_play_time=0
-cooldown=0.4
+#cooldown=0.4
 cv2.namedWindow("live-instruments", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("live-instruments", 1200, 800)
 while True:
@@ -65,16 +65,16 @@ while True:
             if  pointing:
                 if drumbox[0]<x<drumbox[2] and drumbox[1]<y<drumbox[3]:
                     drums.play()
-                    last_play_time=current_time
+                    #last_play_time=current_time
                 elif guitarbox[0]<x<guitarbox[2] and guitarbox[1]<y<guitarbox[3]:
                     guitar.play()
-                    last_play_time=current_time
+                    #last_play_time=current_time
                 elif pianobox[0]<x<pianobox[2] and pianobox[1]<y<pianobox[3]:
                     piano.play()
-                    last_play_time=current_time
+                    #last_play_time=current_time
                 elif trumpetbox[0]<x<trumpetbox[2] and trumpetbox[1]<y<trumpetbox[3]:
                     trumpet.play()
-                    last_play_time=current_time
+                    #last_play_time=current_time
     
     cv2.imshow("live-instruments",frames)
     if cv2.waitKey(1) & 0xFF==ord('q'):
